@@ -1,0 +1,14 @@
+# Credenciais (nunca enviar ao GitHub nem colocar no .zip)
+.env
+.streamlit/secrets.toml
+
+# Ambiente virtual
+.venv/
+venv/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Pasta de flags do Gradio, caso seja criada
+.gradio/
