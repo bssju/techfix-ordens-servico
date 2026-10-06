@@ -1,7 +1,7 @@
 # TechFix Informática — Sistema de Ordens de Serviço
 
 **Aluna:** Juliana Burato  
-**Atividade 2** — Aplicações em Data Science  
+**Atividade 2:** Aplicações em Data Science  
 Curso de Especialização em Ciência de Dados — Extecamp (UNICAMP)
 
 Solução web para a loja fictícia TechFix: uma aplicação de atendimento em **Gradio** (balcão e celular) e um painel do gerente em **Streamlit**, compartilhando um banco PostgreSQL no **Supabase**. Todos os dados usados são fictícios.
@@ -22,7 +22,7 @@ techfix/
 └── evidencias/          # prints das telas e das tabelas
 ```
 
-## Parte 1 — Banco de dados (`sql/schema.sql`)
+## Parte 1. Banco de dados (`sql/schema.sql`)
 
 - Tabelas `clientes` e `ordens_servico` (relação 1:N), com chave primária `bigint` gerada automaticamente.
 - Chave estrangeira `ordens_servico.cliente_id → clientes.id` com **ON DELETE RESTRICT**: um cliente com OS não pode ser excluído, preservando o histórico de reparos.
@@ -30,13 +30,13 @@ techfix/
 - Índices em `cliente_id` e `status`, trigger que atualiza `data_atualizacao` a cada alteração e view `vw_ordens_completa` (com `security_invoker`) usada pelo painel.
 - RLS habilitado com política de acesso aberta, conforme o padrão da aula.
 
-## Parte 2 — Atendimento (`app_gradio.py`)
+## Parte 2. Atendimento (`app_gradio.py`)
 
 - `gr.Blocks` com `gr.Row`/`gr.Column` (as colunas viram uma só no celular), título, instrução de uso, rótulos e placeholders.
 - **Cadastrar:** valida campos obrigatórios, e-mail e celular; reaproveita o cliente pelo e-mail sem alterar o cadastro; abre a OS com status "Aberto" e informa o número gerado.
 - **Limpar:** esvazia todos os campos. `share=True` gera o link público temporário para uso no celular.
 
-## Parte 3 — Painel do gerente (`app_streamlit.py`)
+## Parte 3. Painel do gerente (`app_streamlit.py`)
 
 - Abas **Consultar**, **Cadastrar**, **Editar/Excluir** e **Indicadores**.
 - Filtros por nome, e-mail e status na barra lateral, com **exportação do CSV filtrado** (desafio opcional).
