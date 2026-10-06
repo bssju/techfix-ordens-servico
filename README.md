@@ -2,7 +2,7 @@
 
 **Aluna:** Juliana Burato  
 **Atividade 2:** Aplicações em Data Science  
-Curso de Especialização em Ciência de Dados — Extecamp (UNICAMP)
+Curso de Especialização em Ciência de Dados, Extecamp (UNICAMP)
 
 Solução web para a loja fictícia TechFix: uma aplicação de atendimento em **Gradio** (balcão e celular) e um painel do gerente em **Streamlit**, compartilhando um banco PostgreSQL no **Supabase**. Todos os dados usados são fictícios.
 
